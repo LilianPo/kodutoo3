@@ -77,7 +77,8 @@
     if (!isset($_GET['robot'])) {
         echo '<div class="alert alert-danger mt-3" role="alert">Palun kinnitage, et Te ei ole robot!</div>';
     
-    } if (isset($_GET['kogus']) && isset($_GET['hind'])) {
+    } else { 
+    if (isset($_GET['kogus']) && isset($_GET['hind'])) {
         $k1 = $_GET['kogus'];
         $h1 = $_GET['hind'];
     
@@ -85,9 +86,11 @@
     if ($k1 <= 0 or $h1 <= 0) {
         echo '<div class="alert alert-danger mt-3" role="alert">Palun sisestage nullist suurem number!</div>';
     } else {
+    
         echo "Kogus: ".$k1."<br>";
         echo "Hind: ".$h1."<br>";
         echo "Kokku " .$k1*$h1;
+      }
     }
 }
 ?>
